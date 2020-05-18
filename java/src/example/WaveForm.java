@@ -8,9 +8,9 @@ public class WaveForm
     MyVisual mv;
     float cy = 0;
 
-    public WaveForm(MyVisual mv)
+    public WaveForm(MyVisual myVisual)
     {
-        this.mv = mv;
+        this.mv = myVisual;
         cy = this.mv.height / 2;
     }
 

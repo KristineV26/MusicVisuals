@@ -7,9 +7,9 @@ public class AudioBandsVisual
 {
     MyVisual mv;
 
-    public AudioBandsVisual(MyVisual mv)
+    public AudioBandsVisual(MyVisual myVisual)
     {
-        this.mv = mv; 
+        this.mv = myVisual; 
     }
 
     public void render()

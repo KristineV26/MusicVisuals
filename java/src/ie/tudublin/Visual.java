@@ -15,7 +15,7 @@ public abstract class Visual extends PApplet
 	private Minim minim;
 	private AudioInput ai;
 	private AudioPlayer ap;
-	private AudioBuffer ab;
+	protected static AudioBuffer ab;
 	private FFT fft;
 
 	private float amplitude  = 0;
@@ -78,6 +78,20 @@ public abstract class Visual extends PApplet
 			smoothedBands[i] = lerp(smoothedBands[i], bands[i], 0.05f);
 		}
 	}
+
+	protected int countZeroCrossings()
+	{
+		int count = 0;
+
+		for(int i = 1 ; i < ap.length() ; i ++)
+		{
+			if (ap.left.get(i-1) > 0 && ap.left.get(i) <= 0)
+			{
+				count ++;
+			}
+		}
+		return count;
+    }
 
 	public void startListening()
 	{
